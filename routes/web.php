@@ -9,4 +9,4 @@ Route::get('/login',[AuthController::class,'indexlogin'])->name('login');
 Route::post('/Authlogin',[AuthController::class,'login']);
 Route::post('/Authregister',[AuthController::class,'register']);
 Route::get('/register',[AuthController::class,'indexregister'])->name('register');
-Route::get('/dashboard',[dashboard::class,'index'])->name('dashboard');
+Route::get('/dashboard',[dashboard::class,'index'])->name('dashboard')->middleware('AuthMiddleware');
